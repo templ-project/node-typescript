@@ -11,16 +11,19 @@ npm i -D jest eslint-plugin-jest
 
 ### Configure .eslintrjc.js
 
-Open `./.eslintjrc.js` and replace `plugin:mocha/recommended` with `plugin:jest/recommended` under `extends` key.
+1. Run `yarn add --dev @types/jest`.
+2. Open `./.eslintjrc.js` and replace `plugin:mocha/recommended` with `plugin:jest/recommended` under `extends` key.
+3. Clean mocha packages from `package.json`
+4. Remove `.mocharc.js`
 
 ### Configure package.json
 
 Open `./package.json` and replace all the `"test*"` commands with the following
 
 ```json
+  "test": "cross-env NODE_ENV=test NO_API_DOC=1 jest --coverage --runInBand --verbose",
   "test:junit": "npm run test -- --reporter mocha-junit-reporter --reporter-options mochaFile=.junit.xml",
-  "test:watch": "npm run test -- --watch",
-  "test": "cross-env NODE_ENV=test NO_API_DOC=1 jest --coverage --runInBand --verbose"
+  "test:watch": "npm run test -- --watch"
 ```
 
 ### Change to Jest
@@ -28,4 +31,19 @@ Open `./package.json` and replace all the `"test*"` commands with the following
 * Open `./test/index.test.js`
 * Comment or remove everything related to Mocha
 * Uncomment the commented Jest unit test.
+* Add the content bellow to `jest.config.js`
 * Happy testing!
+
+```javascript
+// jest.config.js
+
+module.exports = {
+  clearMocks: true,
+  coverageDirectory: 'coverage',
+  moduleFileExtensions: ['js', 'json', 'jsx', 'ts', 'tsx'],
+  // rootDir: '.',
+  roots: ['test'],
+  testEnvironment: 'node',
+  transform: {'^.+\\.(t|j)s$': 'ts-jest'},
+};
+```

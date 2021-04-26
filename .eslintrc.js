@@ -10,10 +10,15 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
     'plugin:@typescript-eslint/recommended',
+    // uncomment to add airbnb rules
+    // 'airbnb-typescript/base'
     'plugin:mocha/recommended',
     'plugin:sonar/recommended',
     'plugin:sonarjs/recommended',
+    // comment to remove mocha rules
     'plugin:mocha/recommended',
+    // uncomment to add jest rules
+    // 'plugin:jest/recommended',
     'prettier',
   ],
   plugins: ['@typescript-eslint', 'prettier', 'sonar', 'sonarjs'],

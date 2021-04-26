@@ -5,7 +5,7 @@
 ```bash
 npm i -D eslint-config-airbnb-base
 # or
-yarn add --dev eslint-config-airbnb-base
+yarn add --dev eslint-config-airbnb-typescript
 ```
 
 ### Configure EsLint for Airbnb Rules
