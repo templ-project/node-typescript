@@ -2,24 +2,24 @@
 
 <!-- https://hits.seeyoufarm.com/ -->
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Ftempl-project%2Fnode&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
-[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/templ-project/node/issues)
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/templ-project/node-typescript/issues)
 
 ![JSCPD](.jscpd/jscpd-badge.svg?raw=true)
 
-<!-- [![TravisCI](https://travis-ci.org/templ-project/node.svg?branch=master)](https://travis-ci.org/templ-project/node) -->
+<!-- [![TravisCI](https://travis-ci.org/templ-project/node-typescript.svg?branch=master)](https://travis-ci.org/templ-project/node-typescript) -->
 <!-- CI Badges -->
-<!-- [![CircleCI](https://circleci.com/gh/templ-project/node.svg?style=shield)](https://circleci.com/gh/templ-project/node) -->
+<!-- [![CircleCI](https://circleci.com/gh/templ-project/node-typescript.svg?style=shield)](https://circleci.com/gh/templ-project/node-typescript) -->
 
-[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node&metric=alert_status)](https://sonarcloud.io/dashboard?id=templ-project_node)
-[![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node&metric=coverage)](https://sonarcloud.io/component_measures/metric/coverage/list?id=templ-project_node)
-[![SonarCloud Bugs](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node&metric=bugs)](https://sonarcloud.io/component_measures/metric/reliability_rating/list?id=templ-project_node)
-[![SonarCloud Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node&metric=vulnerabilities)](https://sonarcloud.io/component_measures/metric/security_rating/list?id=templ-project_node)
+[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node-typescript&metric=alert_status)](https://sonarcloud.io/dashboard?id=templ-project_node-typescript)
+[![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node-typescript&metric=coverage)](https://sonarcloud.io/component_measures/metric/coverage/list?id=templ-project_node-typescript)
+[![SonarCloud Bugs](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node-typescript&metric=bugs)](https://sonarcloud.io/component_measures/metric/reliability_rating/list?id=templ-project_node-typescript)
+[![SonarCloud Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node-typescript&metric=vulnerabilities)](https://sonarcloud.io/component_measures/metric/security_rating/list?id=templ-project_node-typescript)
 
 <!-- Donation Badges -->
 [![Donate to this project using Patreon](https://img.shields.io/badge/patreon-donate-yellow.svg)](https://patreon.com/dragoscirjan)
 [![Donate to this project using Paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QBP6DEBJDEMV2&source=url)
 
-<img alt="JavaScript Logo" src="https://github.com/templ-project/node/blob/main/javascript.svg?raw=true" width="20%" align="right" />
+<img alt="JavaScript Logo" src="https://github.com/templ-project/node-typescript/blob/main/javascript.svg?raw=true" width="20%" align="right" />
 
 <!-- Project Description Starts Here -->
 
@@ -94,7 +94,7 @@ Use sub-headers if necesary
 -->
 
 ```bash
-git clone https://github.com/templ-project/node your_project
+git clone https://github.com/templ-project/node-typescript your_project
 cd your_project
 rm -rf .git
 git init
@@ -152,7 +152,7 @@ npm run release
 
 <!-- ## Issues / Support
 
-Add a set of links to the [issues](/templ-project/node/issues) page/website, so people can know where to add issues/bugs or ask for support. -->
+Add a set of links to the [issues](/templ-project/node-typescript/issues) page/website, so people can know where to add issues/bugs or ask for support. -->
 
 ## License
 
