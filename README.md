@@ -19,7 +19,7 @@
 [![Donate to this project using Patreon](https://img.shields.io/badge/patreon-donate-yellow.svg)](https://patreon.com/dragoscirjan)
 [![Donate to this project using Paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QBP6DEBJDEMV2&source=url)
 
-<img alt="JavaScript Logo" src="https://github.com/templ-project/node-typescript/blob/main/javascript.svg?raw=true" width="20%" align="right" />
+<img alt="JavaScript Logo" src="https://github.com/templ-project/node-typescript/blob/main/typescript.svg?raw=true" width="20%" align="right" />
 
 <!-- Project Description Starts Here -->
 
