@@ -252,7 +252,7 @@ module.exports = {
        true: also detect dependencies that only exist before typescript-to-javascript compilation
        "specify": for each dependency identify whether it only exists before compilation or also after
      */
-    // tsPreCompilationDeps: false,
+    tsPreCompilationDeps: true,
 
     /* if true combines the package.jsons found from the module up to the base
        folder the cruise is initiated from. Useful for how (some) mono-repos
@@ -271,9 +271,9 @@ module.exports = {
        dependency-cruiser's current working directory). When not provided
        defaults to './tsconfig.json'.
      */
-    // tsConfig: {
-    //  fileName: './tsconfig.json'
-    // },
+    tsConfig: {
+      fileName: 'tsconfig.json'
+    },
 
     /* Webpack configuration to use to get resolve options from.
 
@@ -410,4 +410,4 @@ module.exports = {
     }
   }
 };
-// generated: dependency-cruiser@9.25.1 on 2021-04-22T20:21:39.361Z
+// generated: dependency-cruiser@9.26.0 on 2021-04-26T20:07:48.803Z
