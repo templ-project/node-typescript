@@ -11,8 +11,15 @@
 <!-- [![CircleCI](https://circleci.com/gh/templ-project/node-typescript.svg?style=shield)](https://circleci.com/gh/templ-project/node-typescript) -->
 
 [![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node-typescript&metric=alert_status)](https://sonarcloud.io/dashboard?id=templ-project_node-typescript)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node-typescript&metric=code_smells)](https://sonarcloud.io/dashboard?id=templ-project_node-typescript)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node-typescript&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=templ-project_node-typescript)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node-typescript&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=templ-project_node-typescript)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node-typescript&metric=security_rating)](https://sonarcloud.io/dashboard?id=templ-project_node-typescript)
+
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node-typescript&metric=ncloc)](https://sonarcloud.io/dashboard?id=templ-project_node-typescript)
 [![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node-typescript&metric=coverage)](https://sonarcloud.io/component_measures/metric/coverage/list?id=templ-project_node-typescript)
 [![SonarCloud Bugs](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node-typescript&metric=bugs)](https://sonarcloud.io/component_measures/metric/reliability_rating/list?id=templ-project_node-typescript)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node-typescript&metric=sqale_index)](https://sonarcloud.io/dashboard?id=templ-project_node-typescript)
 [![SonarCloud Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node-typescript&metric=vulnerabilities)](https://sonarcloud.io/component_measures/metric/security_rating/list?id=templ-project_node-typescript)
 
 <!-- Donation Badges -->
