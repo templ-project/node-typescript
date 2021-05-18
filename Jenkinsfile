@@ -64,7 +64,6 @@ pipeline {
                 environment name: 'RUN_SONAR_SCANNER', value: '1'
                 environment name: 'RUN_SONAR_SCANNER', value: 'y'
                 environment name: 'RUN_SONAR_SCANNER', value: 'yes'
-                environment name: 'RUN_SONAR_SCANNER', value: 1
               }
             }
             script {
