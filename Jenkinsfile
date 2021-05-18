@@ -8,8 +8,8 @@ pipeline {
 
   environment {
     // NODE_VERSIONS = "10 12 13 14 15 16"
-    // error dependency-cruiser@10.0.1: The engine "node" is incompatible with this module. Expected version "^12.20||^14||>=16". Got "10.24.1"
-    // error @babel/eslint-parser@7.14.2: The engine "node" is incompatible with this module. Expected version "^10.13.0 || ^12.13.0 || >=14.0.0". Got "13.14.0"
+    // error dependency-cruiser@10.0.1: The engine "node" is incompatible with this module. Expected version "^12.20||^14||>=16".
+    // error @babel/eslint-parser@7.14.2: The engine "node" is incompatible with this module. Expected version "^10.13.0 || ^12.13.0 || >=14.0.0".
     NODE_VERSIONS = "12 14 16"
     NODE_VERSION_DEFAULT = "14"
     RUN_SONAR_SCANNER = 0
@@ -42,6 +42,7 @@ pipeline {
             script {
               // nvm.runSh 'npx yarn i', params.NODE_VERSION
               npm.install([
+                cacheKey: "node_v${env.NODE_VERSION}",
                 manager:'npx yarn',
                 useNvm: true,
                 nodeVersion: params.NODE_VERSION
@@ -56,28 +57,30 @@ pipeline {
             }
           }
         }
-        // stage("Code Sonar") {
-        //   steps {
-        //     when {
-        //       anyOf {
-          // TODO: fix expression
-        //         environment.RUN_SONAR_SCANNER 1
-        //       }
-        //     }
-        //     script {
-        //       if (params.NODE_VERSION == env.NODE_VERSION_DEFAULT) {
-        //         withCredentials([
-        //           string(credentialsId: 'sonar_server_host', variable: 'SONAR_HOST'),
-        //           string(credentialsId: 'sonar_server_login', variable: 'SONAR_LOGIN')
-        //         ]) {
-        //           nvm.runSh "npx yarn run sonar -- -Dsonar.host.url=${SONAR_HOST} -Dsonar.login=${SONAR_LOGIN}", params.NODE_VERSION
-        //         }
-        //       } else {
-        //         echo "skip"
-        //       }
-        //     }
-        //   }
-        // }
+        stage("Code Sonar") {
+          steps {
+            when {
+              anyOf {
+                environment name: 'RUN_SONAR_SCANNER', value: '1'
+                environment name: 'RUN_SONAR_SCANNER', value: 'y'
+                environment name: 'RUN_SONAR_SCANNER', value: 'yes'
+                environment name: 'RUN_SONAR_SCANNER', value: 1
+              }
+            }
+            script {
+              if (params.NODE_VERSION == env.NODE_VERSION_DEFAULT) {
+                withCredentials([
+                  string(credentialsId: 'sonar_server_host', variable: 'SONAR_HOST'),
+                  string(credentialsId: 'sonar_server_login', variable: 'SONAR_LOGIN')
+                ]) {
+                  nvm.runSh "npx yarn run sonar -- -Dsonar.host.url=${SONAR_HOST} -Dsonar.login=${SONAR_LOGIN}", params.NODE_VERSION
+                }
+              } else {
+                echo "skip"
+              }
+            }
+          }
+        }
         stage("Code UnitTest") {
           steps {
             script {
