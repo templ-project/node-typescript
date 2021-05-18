@@ -10,14 +10,30 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
     'plugin:@typescript-eslint/recommended',
-    // uncomment to add airbnb rules
+    /************************************************************************
+     * Uncomment to add airbnb rules. Don't forget you need to install
+     * the airbnb eslint plugin.
+     * ```bash
+     * npm i -D eslint-config-airbnb-base
+     * # or
+     * yarn add --dev eslint-config-airbnb-typescript
+     * ```
+     */
     // 'airbnb-typescript/base'
     'plugin:mocha/recommended',
     'plugin:sonar/recommended',
     'plugin:sonarjs/recommended',
     // comment to remove mocha rules
     'plugin:mocha/recommended',
-    // uncomment to add jest rules
+    /************************************************************************
+     * Uncomment to add jest rules. Don't forget you need to install
+     * the jest eslint plugin.
+     * ```bash
+     * npm i -D eslint-plugin-jest
+     * # or
+     * yarn add --dev eslint-plugin-jest
+     * ```
+     */
     // 'plugin:jest/recommended',
     'prettier',
   ],

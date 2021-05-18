@@ -45,7 +45,7 @@
   "bugs": {
     "url": "https://github.com/templ-project/node-typescript/issues"
   },
-  "homepage": "https://github.com/templ-project/node#readme",
+  "homepage": "https://github.com/templ-project/node-typescript#readme",
   "devDependencies": {
     "@babel/core": "7.14.3",
     "@babel/eslint-parser": "^7.14.3",
