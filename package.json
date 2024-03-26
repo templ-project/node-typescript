@@ -1,6 +1,6 @@
 {
   "name": "@templ-project/node-typescript",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "TypeScript Project Template",
   "main": "./dist/cjs/index.js",
   "browser": "./dist/browser/index.js",
@@ -158,9 +158,21 @@
   },
   "nyc": {
     "extends": "@istanbuljs/nyc-config-typescript",
-    "reporter": ["html", "lcov", "text"],
-    "include": ["test*/**/!(*.test.*).[tj]s?(x)"],
-    "exclude": ["test*", "dist", "*.js", ".scripts", "coverage"],
+    "reporter": [
+      "html",
+      "lcov",
+      "text"
+    ],
+    "include": [
+      "test*/**/!(*.test.*).[tj]s?(x)"
+    ],
+    "exclude": [
+      "test*",
+      "dist",
+      "*.js",
+      ".scripts",
+      "coverage"
+    ],
     "all": true
   }
 }
