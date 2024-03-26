@@ -28,8 +28,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Init
-        run: npm i
+      - name: Install Dependencies
+        run: npm i --legacy-peer-deps
       - name: Code Analysis
         if: ${{ matrix.node-version == '20.x' }}
         run: npm run ca
@@ -59,8 +59,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18.x
-      - name: run npm i
-        run: npm install
+      - name: Install Dependencies
+        run: npm i --legacy-peer-deps
       - name: Create/Update Release PR
         run: |
           npm run release -- release-pr \

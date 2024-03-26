@@ -31,8 +31,8 @@ which is also included in
 - [Templ Node.js](#templ-nodejs)
   - [Getting Started](#getting-started)
     - [Prerequisites / Dependencies](#prerequisites--dependencies)
-        - [For Windows](#for-windows)
-        - [For Linux/Unix/OSX](#for-linuxunixosx)
+      - [For Windows](#for-windows)
+      - [For Linux/Unix/OSX](#for-linuxunixosx)
       - [Known Issues / Troubleshooting](#known-issues--troubleshooting)
     - [Installation](#installation)
     - [Development](#development)
@@ -68,8 +68,9 @@ brew install git
 
 #### Known Issues / Troubleshooting
 
-* unable to configure **mocha** properly for testing
-* latest **eslint** does not support latest **typescript**
+- unable to configure **mocha** properly for testing
+- latest **eslint** does not support latest **typescript**
+- due to eslint plugin incompatibilities, `npm install` requires `--legacy-peer-deps` flag
 
 ### Installation
 
