@@ -1,78 +1,37 @@
-import dts from 'rollup-plugin-dts';
-import typescript from 'rollup-plugin-typescript2';
+const typescript = require('@rollup/plugin-typescript');
+const commonjs = require('@rollup/plugin-commonjs');
+const resolve = require('@rollup/plugin-node-resolve');
 
-const isProduction = process.env.NODE_ENV === 'production';
-
-const entryName = 'index';
-/**
- * Replace this with the name of your module
- */
-const name = 'javascript-template';
-
-const ts = (target = 'es2015') =>
-  typescript({
-    cacheRoot: '.rollupcache',
-    // tsconfigDefaults: defaultCfg,
-    // tsconfig: undefined,
-    tsconfigOverride: {
-      compilerOptions: {
-        module: 'es2015',
-        target: target,
-      },
-      exclude: [],
-      include: ['src'],
+module.exports = [
+  // Browser build
+  {
+    input: 'src/index.ts',
+    output: {
+      file: 'dist/browser/index.js',
+      format: 'es', // or 'umd' if you need browser and Node.js support
     },
-    useTsconfigDeclarationDir: true,
-  });
-
-export default [
-  {
-    input: `src/${entryName}.ts`,
-    output: [
-      {
-        file: `dist/es2015/${entryName}.js`,
-        format: 'es',
-      },
-      {
-        file: `dist/umd-es2015/${entryName}.js`,
-        format: 'umd',
-        name: name,
-      },
+    plugins: [
+      typescript(),
+      resolve(), // resolves third-party modules in node_modules
+      commonjs(), // converts CommonJS modules to ES6
     ],
-    plugins: [ts()],
   },
+  // CommonJS build for Node.js
   {
-    input: './src/index.ts',
-    output: [{file: 'dist/index.d.ts', format: 'es'}],
-    plugins: [dts()],
+    input: 'src/index.ts',
+    output: {
+      file: 'dist/.rollup/cjs/index.js',
+      format: 'cjs',
+    },
+    plugins: [typescript(), resolve(), commonjs()],
   },
-].concat(
-  !isProduction
-    ? []
-    : [
-        {
-          input: `src/${entryName}.ts`,
-          output: {
-            // @bab/ts-ignore
-            file: `dist/es2017/${entryName}.js`,
-            format: 'es',
-          },
-          plugins: [ts('es2017')],
-        },
-        {
-          input: `src/${entryName}.ts`,
-          output: [
-            {file: `dist/commonjs/${entryName}.js`, format: 'cjs'},
-            {
-              file: `dist/amd/${entryName}.js`,
-              format: 'amd',
-              amd: {id: entryName},
-            },
-            {file: `dist/native-modules/${entryName}.js`, format: 'es'},
-            {file: `dist/umd/${entryName}.js`, format: 'umd', name: name},
-            {file: `dist/system/${entryName}.js`, format: 'system'},
-          ],
-          plugins: [ts('es5')],
-        },
-      ],
-);
+  // ESM build
+  {
+    input: 'src/index.ts',
+    output: {
+      file: 'dist/.rollup/esm/index.js',
+      format: 'es',
+    },
+    plugins: [typescript(), resolve(), commonjs()],
+  },
+];
